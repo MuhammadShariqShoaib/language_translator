@@ -31,7 +31,9 @@ export default function TranslatorApp() {
   }, [inputText, inputLanguage, outputLanguage]);
 
   const translateText = async () => {
-    const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${inputLanguage}&tl=${outputLanguage}&dt=t&q=${encodeURIComponent(inputText)}`;
+    const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${inputLanguage}&tl=${outputLanguage}&dt=t&q=${encodeURIComponent(
+      inputText
+    )}`;
     try {
       const response = await fetch(url);
       const result = await response.json();
